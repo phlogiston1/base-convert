@@ -3,7 +3,7 @@ package manyNumberBases;
 import java.util.ArrayList;
 
 public class Convert {
-    public char[] lookupTable = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    //public char[] lookupTable = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     public String lut = "0123456789abcdefghijklmnopqrstuvwxyz";
     public ArrayList<Integer> output = new ArrayList<Integer>();
     private String in = "";
@@ -55,13 +55,12 @@ public class Convert {
     }
     public static void main(String args[]){
         Convert cv = new Convert();
-        //cv.lut = "`1234567890-=~!@#$%^&*()_+qwertyuiop[]\\QWERTYUIOP{}|asdfghjkl;;\'ASDFGHJKL:\"zxcvbnm,./ZXCVBNM<>? ";
-        cv.lut = "0123456789";
-        //String cmon = cv.convert(2);
-        //System.out.println("|" + cmon + "|");
-        System.out.println(cv.convert(1));
-        //System.out.println(cv.deConvert("ff"));
+        Convert b26 = new Convert();
+        cv.lut = "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:\"ZXCVBNM<>?";
+        b26.lut = "abcdefghijklmnopqrstuvwxyz";
+        String test = cv.convert(b26.deConvert("epic"));
+        System.out.println(test);
+        System.out.println(b26.convert(cv.deConvert(test)));
         System.out.println("(base " + cv.base + ")");
     }
-    
 }
